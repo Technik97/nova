@@ -12,6 +12,7 @@ module.exports = {
   theme: {
     extend: {},
   },
+  purge: ['../lib/**/*.{ex,html,js,ts,heex,eex,leex}'],
   plugins: [
     require('@tailwindcss/forms'),
     plugin(({addVariant}) => addVariant('phx-no-feedback', ['&.phx-no-feedback', '.phx-no-feedback &'])),
