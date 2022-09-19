@@ -26,6 +26,7 @@ config :nova, NovaWeb.Endpoint,
   secret_key_base: "pDIaGgvRXc+DC3PQ1WytRBCFc31Wam+pCIcsocD/NZX93TbzBRXJuXwE7Y8cZ5QW",
   watchers: [
     # Start the esbuild watcher by calling Esbuild.install_and_run(:default, args)
+    tailwind: {Tailwind, :install_and_run, [:default, ~w(--watch)]},
     esbuild: {Esbuild, :install_and_run, [:default, ~w(--sourcemap=inline --watch)]}
   ]
 
