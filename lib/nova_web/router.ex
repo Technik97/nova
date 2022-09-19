@@ -1,5 +1,6 @@
 defmodule NovaWeb.Router do
   use NovaWeb, :router
+  use Kaffy.Routes #, scope: "/admin", pipe_through: [:some_plug, :authenticate]
 
   pipeline :browser do
     plug :accepts, ["html"]
