@@ -10,15 +10,7 @@
     <script defer phx-track-static type="text/javascript" src={Routes.static_path(@conn, "/assets/app.js")}></script>
   </head>
   <body>
-    <div class="flex flex-wrap border-b-2 border-pink-500">
-      <div class="w-full">
-        <nav class="relative flex flex-wrap items-center justify-start px-2 py-3 navbar-expand-lg bg-slate-900">
-            <div class="px-3">
-              <span class="bg-slate-900 hover:bg-slate-500 text-red-500 text-lg px-4 py-3 rounded">NOVA</span>
-            </div>
-        </nav>
-      </div>
-    </div>
+    <%= render "_user_menu.html", assigns %>
     <%= @inner_content %>
     <div class="absolute bottom-0 w-full flex justify-center">
       <footer class="p-4 bg-white sm:p-6 w-4/5">

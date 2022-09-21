@@ -1,0 +1,23 @@
+<div class="flex flex-wrap border-b-2 border-pink-500">
+  <div class="w-full">
+    <nav class="relative flex flex-wrap items-center justify-between px-2 py-3 navbar-expand-lg bg-slate-900">
+        <div class="px-3">
+          <span class="bg-slate-900 hover:bg-slate-500 text-red-500 text-lg px-4 py-3 rounded">NOVA</span>
+        </div>
+        <div class="px-3">
+          <%= if @current_user do %>
+            <li><%= @current_user.email %></li>
+            <span class="btn-auth"><%= link "Settings", to: Routes.user_settings_path(@conn, :edit) %></span>
+            <span class="btn-auth"><%= link "Log out", to: Routes.user_session_path(@conn, :delete), method: :delete %></span>
+          <% else %>
+            <span class="btn-auth"><%= link "Register", to: Routes.user_registration_path(@conn, :new) %></span>
+            <span class="btn-auth"><%= link "Log in", to: Routes.user_session_path(@conn, :new) %></span>
+          <% end %>
+        </div>
+    </nav>
+  </div>
+</div>
+
+<ul>
+
+</ul>
