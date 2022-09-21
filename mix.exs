@@ -50,7 +50,8 @@ defmodule Nova.MixProject do
       {:jason, "~> 1.2"},
       {:plug_cowboy, "~> 2.5"},
       {:tailwind, "~> 0.1", runtime: Mix.env() == :dev},
-      {:kaffy, "~> 0.9.0"}
+      {:kaffy, "~> 0.9.0"},
+      {:pbkdf2_elixir, "~> 2.0"}
     ]
   end
 
