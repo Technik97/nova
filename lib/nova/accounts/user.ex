@@ -2,14 +2,22 @@ defmodule Nova.Accounts.User do
   use Ecto.Schema
   import Ecto.Changeset
 
+  alias __MODULE__
+
   schema "users" do
     field :email, :string
     field :password, :string, virtual: true, redact: true
+    field :user_name, :string
+    field :full_name, :string
+    field :bio, :string
     field :hashed_password, :string, redact: true
     field :confirmed_at, :naive_datetime
 
     timestamps()
   end
+
+  @registration_fields ~w(email password user_name full_name bio)a
+  # @registration_required_fields ~w(email password user_name full_name)a
 
   @doc """
   A user changeset for registration.
@@ -30,7 +38,7 @@ defmodule Nova.Accounts.User do
   """
   def registration_changeset(user, attrs, opts \\ []) do
     user
-    |> cast(attrs, [:email, :password])
+    |> cast(attrs, @registration_fields)
     |> validate_email()
     |> validate_password(opts)
   end
