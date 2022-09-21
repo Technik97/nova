@@ -5,3 +5,8 @@
 /* This file is for your main application CSS */
 
 
+@layer components {
+    .btn-auth {
+      @apply rounded-lg p-3 m-3 text-white hover:bg-blue-600 hover:text-blue-100;
+    }
+  }
