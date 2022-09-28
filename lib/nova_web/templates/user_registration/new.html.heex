@@ -7,9 +7,21 @@
     </div>
   <% end %>
 
+  <%= label f, :user_name %>
+  <%= text_input f, :user_name, required: true %>
+  <%= error_tag f, :user_name %>
+
+  <%= label f, :full_name %>
+  <%= text_input f, :full_name, required: true %>
+  <%= error_tag f, :full_name %>
+
   <%= label f, :email %>
   <%= email_input f, :email, required: true %>
   <%= error_tag f, :email %>
+
+  <%= label f, :bio %>
+  <%= textarea f, :bio %>
+  <%= error_tag f, :bio %>
 
   <%= label f, :password %>
   <%= password_input f, :password, required: true %>
